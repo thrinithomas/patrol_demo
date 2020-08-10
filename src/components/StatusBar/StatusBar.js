@@ -9,7 +9,7 @@ export default function StatusBar(props) {
 
     setInterval(() => {
         // console.log(new Date())
-        setStatusbar({...statusbar, currentTime: new Date().toLocaleString()})
+        setStatusbar({currentTime: new Date().toLocaleString()})
     }, 1000)
 
     return (

@@ -1,7 +1,6 @@
 import React, {createRef, useState} from "react";
 import {Button, FormControl, InputGroup} from "react-bootstrap";
 import {StaffConsumer} from "../../contexts/StaffContext/staff-context";
-import {Redirect } from "react-router-dom";
 
 export default function DashboardIDInput() {
 
@@ -11,12 +10,13 @@ export default function DashboardIDInput() {
 
     const [input, setInput] = useState({});
 
-    const validateStaff = (value, callback) => {
-        if (value === 1001) {
-            callback(value)
-            // Navigate to other page
-        }
-    }
+    // This function will be used for validate user ID
+    // const validateStaff = (value, callback) => {
+    //     if (value === 1001) {
+    //         callback(value)
+    //         // Navigate to other page
+    //     }
+    // }
 
     return (
 

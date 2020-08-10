@@ -4,7 +4,9 @@ import {Card} from "react-bootstrap";
 export default function TaskboardCard(props) {
 
     const cardOnclick = () => {
-        console.log(`${props.title} Card click`)
+        props.onSelect({
+            select: props.title
+        })
     }
 
 
