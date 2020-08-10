@@ -7,10 +7,14 @@ export default function StatusBar(props) {
         currentTime: new Date().toLocaleString(),
     })
 
-    setInterval(() => {
-        // console.log(new Date())
-        setStatusbar({currentTime: new Date().toLocaleString()})
-    }, 1000)
+    // Don't use setInterval!
+    // https://stackoverflow.com/questions/5479762/will-setinterval-cause-browsers-to-hang
+    // Stack overflow problem
+
+    //setTimeout(() => {
+    //    // console.log(new Date())
+    //    setStatusbar({currentTime: new Date().toLocaleString()})
+    //}, 1000)
 
     return (
         <>

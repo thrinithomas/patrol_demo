@@ -6,6 +6,7 @@ import DashboardScreen from "./screens/DashboardScreen/DashboardScreen";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {StaffConsumer} from "./contexts/StaffContext/staff-context";
 import TaskboardScreen from "./screens/TaskboardScreen/TaskboardScreen";
+import MissionScreen from "./screens/MissionScreen/MissionScreen";
 
 function App() {
 
@@ -30,6 +31,13 @@ function App() {
                                     {staff == null ? <Redirect to="/"/> : null}
                                     <TaskboardScreen/>
                                 </Route>
+
+                                <Route path={"/missions"}>
+                                    {staff == null ? <Redirect to="/"/> : null}
+                                    <MissionScreen/>
+                                </Route>
+
+
                                 {/* Need to invalidate staff ID here or
                              redirect the user to task page if staff ID exist */}
                                 <Redirect from="*" to="/"/>

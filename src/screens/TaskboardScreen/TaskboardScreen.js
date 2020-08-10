@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, Col, Container, Row} from 'react-bootstrap';
 import TaskboardCard from "../../components/TaskboardCard/TaskboardCard";
 import CheckinComponent from "../../components/CheckinComponent/CheckinComponent";
+import {Redirect} from "react-router-dom";
 
 export default function TaskboardScreen() {
 
@@ -12,7 +13,7 @@ export default function TaskboardScreen() {
     });
 
     const prevDate = new Date()
-    prevDate.setDate(prevDate.getDate() -1)
+    prevDate.setDate(prevDate.getDate() - 1)
 
     const [fakeDate, setFakeDate] = useState({
         previousDate: prevDate
@@ -45,16 +46,22 @@ export default function TaskboardScreen() {
     //     return () => clearInterval(interval);
     // }, [])
 
-    // setInterval(() => {
+    // setTimeout(() => {
     //     window.location.reload(false); // Refresh page after 30s
     //     // return <Redirect push to="/" />
     //     console.log("Update Interval")
     // }, logoutSec * 1000)
 
-    // setInterval(() => {
-    //     logoutSec -= 1
-    //     console.log(`${ logoutSec } 後自動返回主頁`)
-    // }, 1000)
+
+    useEffect(() => {
+        console.log(`Hit effect at ${new Date().toLocaleString()}`)
+        const redirectTimer = setTimeout(() => {
+            console.log(`Bye at ${new Date().toLocaleString()}`)
+            // window.location.reload(false); // Refresh page after 30s
+
+        }, 15000)
+        return () => clearTimeout(redirectTimer);
+    }, [])
 
 
     return (
@@ -74,8 +81,8 @@ export default function TaskboardScreen() {
                 {
                     option.select ?
                         option.select !== '任務' ?
-                            <CheckinComponent select={option.select}  fakeDate={fakeDate} setFakeDate={setFakeDate}/> :
-                            <h4>Redirect to mission....</h4> :
+                            <CheckinComponent select={option.select} fakeDate={fakeDate} setFakeDate={setFakeDate}/> :
+                            <Redirect to="/missions"/> :
                         null
                 }
             </Row>

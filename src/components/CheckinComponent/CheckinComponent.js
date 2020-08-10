@@ -11,7 +11,7 @@ export default function CheckinComponent(props) {
     // This function is referring to
     // https://react-bootstrap.netlify.app/components/buttons/#button-loading-state
     const simulateNetworkRequest = () => {
-        return new Promise((resolve) => setTimeout(resolve, 2000));
+        return new Promise((resolve) => setTimeout(resolve, 1000));
     }
 
     useEffect(() => {
@@ -21,6 +21,15 @@ export default function CheckinComponent(props) {
             })
         }
     }, [check.isLoading])
+
+    useEffect(() => {
+        if (props.select) {
+            setCheck({
+                isCheck: false,
+                isLoading: false
+            })
+        }
+    }, [props.select])
 
     const handleClick = () => setCheck({...check, isLoading: true});
 
