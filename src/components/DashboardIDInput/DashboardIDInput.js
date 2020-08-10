@@ -1,11 +1,11 @@
 import React, {createRef, useState} from "react";
 import {Button, FormControl, InputGroup} from "react-bootstrap";
 import {StaffConsumer} from "../../contexts/StaffContext/staff-context";
-import {useLocation} from "react-router-dom";
+import {Redirect } from "react-router-dom";
 
 export default function DashboardIDInput() {
 
-    let location = useLocation();
+    // let location = useLocation();
 
     const cardInputRef = createRef();
 

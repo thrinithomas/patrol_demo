@@ -7,19 +7,7 @@ export default function DashboardCard(props) {
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Text>
-                    What ever it is
-                    {/*{props.remarklist ?*/}
-                    {/*    <Card.Text>*/}
-                    {/*        /!*<ul>*!/*/}
-                    {/*        /!*    {*!/*/}
-                    {/*        /!*        props.remarklist.map((item) => {*!/*/}
-                    {/*        /!*            return <li key={}>{item}</li>*!/*/}
-                    {/*        /!*        })*!/*/}
-                    {/*        /!*    }*!/*/}
-                    {/*        /!*</ul>*!/*/}
-                    {/*    </Card.Text>*/}
-                    {/*    : ""*/}
-                    {/*}*/}
+                    {props.remarklist}
                 </Card.Text>
             </Card.Body>
         </Card>
