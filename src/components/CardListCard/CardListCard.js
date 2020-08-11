@@ -1,33 +1,54 @@
-import React from "react";
-import {Card, Col, Figure, Row} from "react-bootstrap";
+import React, {useEffect} from "react";
+import {Figure, Card, Row, Col} from "react-bootstrap";
 
 export default function CardListCard(props) {
+
     return (
-        <Card id={props.item.title} style={{width: '18rem'}}>
+        <Card as="button"  style={{width: '18rem',
+            backgroundColor: props.item.isSelect? 'cyan':'white'
+        }}
+        onClick={() => props.select(props.item.title)}
+        >
             {/*<Card.Img variant="left" src={`${process.env.PUBLIC_URL}/assets/image/any.png`}/>*/}
             <Card.Body>
                 <Row>
-                    <Figure>
-                        <Figure.Image
-                            width={80}
-                            height={80}
-                            alt="60x60"
-                            src={`${process.env.PUBLIC_URL}/assets/image/any.png`}
-                        />
-                    </Figure>
-                    <Col>
+                    <Col xs={3}>
+                        <Figure>
+                            <Figure.Image
+                                width={80}
+                                height={80}
+                                alt="60x60"
+                                src={`${process.env.PUBLIC_URL}/assets/image/any.png`}
+                            />
+                        </Figure>
+                    </Col>
+                    <Col xs={9}>
                         <Card.Title>{props.item.title}</Card.Title>
-                        <Card.Text>
-                            <Row>
-                                <Col>xxx</Col>
+                        <Row>
+                            <Col>
+                                <Card.Text>
+                                    {props.item.e_name}
+                                </Card.Text>
+                            </Col>
+                            <Col>
                                 <Col>
-                                    {props.item.change_loc ? props.item.change_loc : null}
+                                    <Card.Text>
+
+                                        {props.item.change_diaper ? props.item.change_diaper : null}
+
+                                    </Card.Text>
                                 </Col>
                                 <Col>
-                                    {props.item.change_diaper ? props.item.change_diaper : null}
+                                    <Card.Text>
+
+                                        {props.item.change_loc ? props.item.change_loc : null}
+
+
+                                    </Card.Text>
                                 </Col>
-                            </Row>
-                        </Card.Text>
+
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Card.Body>

@@ -54,9 +54,9 @@ export default function TaskboardScreen() {
 
 
     useEffect(() => {
-        console.log(`Hit effect at ${new Date().toLocaleString()}`)
+        //console.log(`Hit effect at ${new Date().toLocaleString()}`)
         const redirectTimer = setTimeout(() => {
-            console.log(`Bye at ${new Date().toLocaleString()}`)
+            //console.log(`Bye at ${new Date().toLocaleString()}`)
             // window.location.reload(false); // Refresh page after 30s
 
         }, 15000)
