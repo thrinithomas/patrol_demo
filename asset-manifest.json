@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/patrol_demo/static/css/main.5f361e03.chunk.css",
+    "main.js": "/patrol_demo/static/js/main.5d0f49c2.chunk.js",
+    "main.js.map": "/patrol_demo/static/js/main.5d0f49c2.chunk.js.map",
+    "runtime-main.js": "/patrol_demo/static/js/runtime-main.ae883571.js",
+    "runtime-main.js.map": "/patrol_demo/static/js/runtime-main.ae883571.js.map",
+    "static/css/2.11829350.chunk.css": "/patrol_demo/static/css/2.11829350.chunk.css",
+    "static/js/2.a4790ce3.chunk.js": "/patrol_demo/static/js/2.a4790ce3.chunk.js",
+    "static/js/2.a4790ce3.chunk.js.map": "/patrol_demo/static/js/2.a4790ce3.chunk.js.map",
+    "index.html": "/patrol_demo/index.html",
+    "precache-manifest.5823189cdc98d377f10e9d14fbe86bea.js": "/patrol_demo/precache-manifest.5823189cdc98d377f10e9d14fbe86bea.js",
+    "service-worker.js": "/patrol_demo/service-worker.js",
+    "static/css/2.11829350.chunk.css.map": "/patrol_demo/static/css/2.11829350.chunk.css.map",
+    "static/css/main.5f361e03.chunk.css.map": "/patrol_demo/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.a4790ce3.chunk.js.LICENSE.txt": "/patrol_demo/static/js/2.a4790ce3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ae883571.js",
+    "static/css/2.11829350.chunk.css",
+    "static/js/2.a4790ce3.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.5d0f49c2.chunk.js"
+  ]
+}
