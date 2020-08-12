@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Row, Col, Button, Container} from "react-bootstrap";
+import {Alert, Button, Col, Row, Spinner} from "react-bootstrap";
 import MissionCard from "../MissionCard/MissionCard";
 
 export default function MissionListComponent(props) {
@@ -8,13 +8,33 @@ export default function MissionListComponent(props) {
         {
             isSelect: null,
             isSelectDetail: null,
+            isLoading: false,
+            isSubmit: false
         }
     )
 
+    // useEffect method for mission item selection
+    useEffect(() => {
+        if (mission) {
+            console.log(mission.isSelect, mission.isSelectDetail)
+        }
+    }, [mission])
+
+    // useEffect method for simulate network submit
+    useEffect(() => {
+        if (mission.isLoading) {
+            simulateNetworkRequest().then(() => {
+                setMission({...mission, isLoading: false, isSubmit: true})
+            })
+        }
+    }, [mission.isLoading])
+
     const updateMission = (title) => {
         setMission({
+            ...mission,
             isSelect: title,
             isSelectDetail: null,
+            isSubmit: false
         })
     }
 
@@ -26,9 +46,35 @@ export default function MissionListComponent(props) {
         })
     }
 
+    const onUpdateClick = () => {
+        if (mission.isSelect === "轉身") {
+            props.updateChangeLoc(mission.isSelectDetail)
+        } else if (mission.isSelect === "換片") {
+            props.updateChangeDiaper(mission.isSelectDetail)
+        }
+
+        setMission(({
+            ...mission,
+            isSelect: null,
+            isSelectDetail: null,
+        }))
+    }
+
+    const simulateNetworkRequest = () => {
+        return new Promise((resolve) => setTimeout(resolve, 1000))
+    }
+
+    const onSubmitClick = () => {
+        setMission({
+            ...mission,
+            isLoading: true,
+        })
+    }
+
 
     const onCancelClick = () => {
         setMission({
+            ...mission,
             isSelect: null,
             isSelectDetail: null
         })
@@ -123,23 +169,37 @@ export default function MissionListComponent(props) {
                 height: '4rem',
                 width: 'auto',
                 position: 'absolute',
-                bottom: '0',
+                bottom: '4rem',
                 right: '0',
                 left: '0'
             }}>
                 {mission.isSelect ?
                     <>
-                        <Col xs={6}><Button variant="success">Update</Button></Col>
-                        <Col xs={6}><Button variant="danger" onClick={() => onCancelClick()}>Cancel</Button></Col>
+                        <Col xs={6}><Button variant="danger" onClick={() => onUpdateClick()}
+                                            disabled={mission.isSelectDetail === null}>確認</Button></Col>
+                        <Col xs={6}><Button variant="success" onClick={() => onCancelClick()}>取消</Button></Col>
                     </>
                     :
                     <>
-                        <Col xs={6}><Button variant="outline-success">Submit</Button></Col>
                         <Col xs={6}><Button variant="outline-danger"
-                                            onClick={() => onReturnClick()}>Return</Button></Col>
+                                            onClick={() => onSubmitClick()}>
+                            {mission.isLoading ? <Spinner as="span" size="sm" animation="border" /> : <span>上載數據</span>}
+                        </Button></Col>
+                        <Col xs={6}><Button variant="outline-success"
+                                            onClick={() => onReturnClick()}>返回上一頁</Button></Col>
                     </>}
             </Row>
-
+            <Row style={{
+                padding: '0px',
+                height: '4rem',
+                width: 'auto',
+                position: 'absolute',
+                bottom: '0',
+                right: '0',
+                left: '0'
+            }}>
+                {mission.isSubmit ? <Col xs={12}><Alert variant="success"> 上載成功! </Alert></Col> : null}
+            </Row>
         </>
     )
 }

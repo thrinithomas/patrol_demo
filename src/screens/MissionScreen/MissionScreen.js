@@ -59,14 +59,20 @@ export default function MissionScreen() {
         setTask({list: s_task})
     }
 
-    const updateChangeLoc = () => {
+    const updateChangeLoc = (choice) => {
         // Check isSelect
         // then update its status
+        let s_task = [...task.list]
+        s_task = s_task.map(e => (e.isSelect === true ? {...e, change_loc: choice} : e))
+        setTask({list: s_task})
     }
 
-    const updateChangeDiaper = () => {
+    const updateChangeDiaper = (choice) => {
         // Check isSelect
         // then update its status
+        let s_task = [...task.list]
+        s_task = s_task.map(e => (e.isSelect === true ? {...e, change_diaper: choice} : e))
+        setTask({list: s_task})
     }
 
     return (

@@ -17,8 +17,6 @@ export default function CardListComponent(props) {
             <Col>
                 {props.task.list.map(e => {
                     return <CardListCard key={e.title} item={e} select={props.select}/>
-
-
                 })}
             </Col>
 

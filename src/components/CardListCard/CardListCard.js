@@ -1,13 +1,14 @@
-import React, {useEffect} from "react";
-import {Figure, Card, Row, Col} from "react-bootstrap";
+import React from "react";
+import {Card, Col, Figure, Row} from "react-bootstrap";
 
 export default function CardListCard(props) {
 
     return (
-        <Card as="button"  style={{width: '18rem',
-            backgroundColor: props.item.isSelect? 'cyan':'white'
+        <Card as="button" style={{
+            width: '18rem',
+            backgroundColor: props.item.isSelect ? 'cyan' : 'white'
         }}
-        onClick={() => props.select(props.item.title)}
+              onClick={() => props.select(props.item.title)}
         >
             {/*<Card.Img variant="left" src={`${process.env.PUBLIC_URL}/assets/image/any.png`}/>*/}
             <Card.Body>
@@ -33,20 +34,15 @@ export default function CardListCard(props) {
                             <Col>
                                 <Col>
                                     <Card.Text>
-
-                                        {props.item.change_diaper ? props.item.change_diaper : null}
-
+                                        {props.item.change_loc ? <>{props.item.change_loc}</> : null}
                                     </Card.Text>
                                 </Col>
+
                                 <Col>
                                     <Card.Text>
-
-                                        {props.item.change_loc ? props.item.change_loc : null}
-
-
+                                        {props.item.change_diaper ? <>{props.item.change_diaper}</> : null}
                                     </Card.Text>
                                 </Col>
-
                             </Col>
                         </Row>
                     </Col>
