@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Alert, Button, Col, Row, Spinner} from "react-bootstrap";
+import {useHistory} from "react-router-dom"
 import MissionCard from "../MissionCard/MissionCard";
 
 export default function MissionListComponent(props) {
@@ -79,10 +80,11 @@ export default function MissionListComponent(props) {
             isSelectDetail: null
         })
     }
-
+    let history = useHistory();
     const onReturnClick = () => {
         onCancelClick()
-        window.location.reload(false)
+        // window.location.reload(false)
+        history.push('/patrol_demo')
     }
 
     let cardStyle = {width: '13rem', padding: '5px'}
@@ -183,7 +185,7 @@ export default function MissionListComponent(props) {
                     <>
                         <Col xs={6}><Button variant="outline-danger"
                                             onClick={() => onSubmitClick()}>
-                            {mission.isLoading ? <Spinner as="span" size="sm" animation="border" /> : <span>上載數據</span>}
+                            {mission.isLoading ? <Spinner as="span" size="sm" animation="border"/> : <span>上載數據</span>}
                         </Button></Col>
                         <Col xs={6}><Button variant="outline-success"
                                             onClick={() => onReturnClick()}>返回上一頁</Button></Col>

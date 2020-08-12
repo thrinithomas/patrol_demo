@@ -13,12 +13,12 @@ export default function DashboardScreen(props) {
                 ({datum}) =>
                     <Container>
                         <Row>
-                            <Col><DashboardCard title={"125882"} remarklist={["李貴", "try"]}/></Col>
-                            <Col><DashboardCard title={"125881"} remarklist={["方祖文", "try"]}/></Col>
+                            <Col><DashboardCard title={"Y1-1"} remarklist={["李貴"]}/></Col>
+                            <Col><DashboardCard title={"Y1-2"} remarklist={["方祖文"]}/></Col>
                         </Row>
                         <Row>
-                            <Col><DashboardCard title={"125885"} remarklist={["張容容"]}/></Col>
-                            <Col><DashboardCard title={"125883"} remarklist={["何雪"]}/></Col>
+                            <Col><DashboardCard title={"Y1-3"} remarklist={["張容容"]}/></Col>
+                            <Col><DashboardCard title={"Y1-4"} remarklist={["何雪"]}/></Col>
                         </Row>
 
                         <Row>

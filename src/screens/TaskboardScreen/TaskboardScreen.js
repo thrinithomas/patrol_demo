@@ -82,14 +82,16 @@ export default function TaskboardScreen() {
                     option.select ?
                         option.select !== '任務' ?
                             <CheckinComponent select={option.select} fakeDate={fakeDate} setFakeDate={setFakeDate}/> :
-                            <Redirect to="/missions"/> :
+                            <Redirect to="/patrol_demo/missions"/> :
                         null
                 }
             </Row>
             <Row>
                 <Container>
                     <Row>
-                        <Button variant="success" href="/">Return to home and invalidate staff</Button>
+                        <Col xs={12}>
+                            <Button variant="success" href="/patrol_demo">返回主頁</Button>
+                        </Col>
                     </Row>
                     <Row>
                         {/*<h1>{seconds} 後自動返回主頁</h1>*/}

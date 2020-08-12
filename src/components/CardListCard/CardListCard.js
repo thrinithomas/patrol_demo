@@ -16,9 +16,9 @@ export default function CardListCard(props) {
                     <Col xs={3}>
                         <Figure>
                             <Figure.Image
-                                width={80}
-                                height={80}
-                                alt="60x60"
+                                width={120}
+                                height={180}
+                                alt="120x180"
                                 src={`${process.env.PUBLIC_URL}/assets/image/any.png`}
                             />
                         </Figure>

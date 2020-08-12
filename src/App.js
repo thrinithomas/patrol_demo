@@ -18,29 +18,29 @@ function App() {
                         <div className="App">
                             <StatusBar staff={staff} room_id={room_id}/>
                             <Switch>
-                                <Route exact path="/">
-                                    {staff !== null ? <Redirect to="/tasks"/> : null}
+                                <Route exact path="/patrol_demo">
+                                    {staff !== null ? <Redirect to="/patrol_demo/tasks"/> : null}
                                     <DashboardScreen/>
                                 </Route>
 
-                                <Route path="/config">
+                                <Route path="/patrol_demo/config">
                                     <h3>Set room no.</h3>
                                 </Route>
 
-                                <Route path={"/tasks"}>
-                                    {staff == null ? <Redirect to="/"/> : null}
+                                <Route path={"/patrol_demo/tasks"}>
+                                    {staff == null ? <Redirect to="/patrol_demo"/> : null}
                                     <TaskboardScreen/>
                                 </Route>
 
-                                <Route path={"/missions"}>
-                                    {staff == null ? <Redirect to="/"/> : null}
+                                <Route path={"/patrol_demo/missions"}>
+                                    {staff == null ? <Redirect to="/patrol_demo"/> : null}
                                     <MissionScreen/>
                                 </Route>
 
 
                                 {/* Need to invalidate staff ID here or
                              redirect the user to task page if staff ID exist */}
-                                <Redirect from="*" to="/"/>
+                                <Redirect from="*" to="/patrol_demo"/>
 
                             </Switch>
 
