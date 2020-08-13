@@ -9,28 +9,28 @@ export default function MissionScreen() {
     const [task, setTask] = useState({
         list: [
             {
-                title: 125882,
+                title: "Y1-1",
                 e_name: '李貴',
                 isSelect: false,
                 change_loc: null,
                 change_diaper: null
             },
             {
-                title: 125881,
+                title: "Y1-2",
                 e_name: '方祖文',
                 isSelect: false,
                 change_loc: null,
                 change_diaper: null
             },
             {
-                title: 125885,
+                title: "Y1-3",
                 e_name: '張容容',
                 isSelect: false,
                 change_loc: null,
                 change_diaper: null
             },
             {
-                title: 125883,
+                title: "Y1-4",
                 e_name: '何雪',
                 isSelect: false,
                 change_loc: null,
